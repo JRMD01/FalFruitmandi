@@ -1,0 +1,18 @@
+/* src/index.css */
+@import "tailwindcss";
+
+@theme {
+  --color-mandi-green: #2D5A27;
+  --color-mandi-fresh: #86EFAC;
+  --color-mandi-earth: #F5F5F4;
+  --color-mandi-accent: #F59E0B;
+  
+  --font-display: "Inter", "system-ui", sans-serif;
+}
+
+body {
+  background-color: var(--color-mandi-earth);
+  font-family: var(--font-display);
+  color: #1C1917;
+  scroll-behavior: smooth;
+}
