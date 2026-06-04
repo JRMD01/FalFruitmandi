@@ -1,7 +1,7 @@
 /* src/components/Header.jsx */
 import { useState } from 'react';
 import { Menu, X, MessageCircle } from 'lucide-react';
-import logo from '../assets/FalFruitMandiLogo.png';
+// import logo from '../assets/FalFruitMandiLogo.png';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +15,7 @@ export default function Header() {
         <a href="#" className="flex items-center gap-3 group focus:outline-none">
           <div className="p-1 bg-white border-2 border-stone-900 shadow-[3px_3px_0px_0px_rgba(28,25,23,1)] group-hover:translate-x-[1px] group-hover:translate-y-[1px] group-hover:shadow-[2px_2px_0px_0px_rgba(28,25,23,1)] transition-all shrink-0">
             <img 
-              src={logo} 
+              src={"/FalFruitmandiLogo.png"} 
               alt="FalFruitMandi Logo" 
               className="h-14 w-14 sm:h-16 sm:w-16 object-contain" 
             />
