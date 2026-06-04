@@ -1,6 +1,6 @@
 /* src/components/Footer.jsx */
 import { MapPin, Phone, Mail, FileText } from 'lucide-react';
-import logo from '../assets/FalFruitMandiLogo.png';
+// import logo from '../assets/FalFruitMandiLogo.png';
 
 export default function Footer() {
   return (
@@ -13,7 +13,7 @@ export default function Footer() {
             {/* Massive High-Visibility Logo Wrapper */}
             <div className="p-2 bg-white border-2 border-stone-900 shadow-[4px_4px_0px_0px_rgba(134,239,172,1)] inline-block shrink-0 w-24 h-24 sm:w-28 sm:h-28">
               <img 
-                src={logo} 
+                src={"/FalFruitmandiLogo.png"} 
                 alt="FalFruitMandi Logo" 
                 className="w-full h-full object-contain" 
               />
