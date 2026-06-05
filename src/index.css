@@ -2,17 +2,59 @@
 @import "tailwindcss";
 
 @theme {
-  --color-mandi-green: #2D5A27;
-  --color-mandi-fresh: #86EFAC;
-  --color-mandi-earth: #F5F5F4;
-  --color-mandi-accent: #F59E0B;
+  /* Colors must explicitly assign directly to the custom variable prefix */
+  --color-primary: #1b4332;
+  --color-secondary: #2d6a4f;
+  --color-accent: #95d5b2;
+  --color-surface: #f9faf2;
+  --color-surface-container: #f3f4ec;
+  --color-on-surface: #1b4332;
+  --color-on-primary: #ffffff;
   
-  --font-display: "Inter", "system-ui", sans-serif;
+  /* Fonts */
+  --font-serif: "EB Garamond", serif;
+  --font-sans: "Inter", sans-serif;
+  
+  /* Border Radius */
+  --radius-organic: 24px;
 }
 
+/* Update body properties to explicitly read from the tailwind generated theme maps */
 body {
-  background-color: var(--color-mandi-earth);
-  font-family: var(--font-display);
-  color: #1C1917;
-  scroll-behavior: smooth;
+  background-color: var(--color-surface);
+  font-family: var(--font-sans);
+  color: var(--color-on-surface);
+  overflow-x: hidden;
 }
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Ken Burns Effect */
+@keyframes kenburns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+.animate-ken-burns {
+  animation: kenburns 20s ease-in-out infinite alternate;
+}
+
+/* Floating Leaves */
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(10px, -15px) rotate(5deg); }
+  66% { transform: translate(-5px, 10px) rotate(-5deg); }
+}
+.animate-leaf-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--color-surface); }
+::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 10px; }

@@ -1,58 +1,33 @@
 /* src/components/TrustQuote.jsx */
-import { Leaf, Truck, Banknote, ShieldCheck } from 'lucide-react';
-
-const trustPoints = [
-  {
-    icon: <Leaf size={20} className="stroke-[3]" />,
-    label: "Organically Grown"
-  },
-  {
-    icon: <Truck size={20} className="stroke-[3]" />,
-    label: "Fresh Supply"
-  },
-  {
-    icon: <Banknote size={20} className="stroke-[3]" />,
-    label: "Fair Pricing"
-  },
-  {
-    icon: <ShieldCheck size={20} className="stroke-[3]" />,
-    label: "Home & Retail"
-  }
-];
-
+import {LeafIcon} from 'lucide-react'
 export default function TrustQuote() {
   return (
-    <section className="w-full bg-mandi-green text-white px-4 sm:px-8 py-14 border-b-2 border-stone-900 relative overflow-hidden">
-      {/* Brutalist Pattern Overlay */}
-      <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none" />
-      
-      <div className="mx-auto max-w-6xl relative z-10 text-center">
-        
-        {/* Core Statement Banner */}
-        <div className="inline-block bg-mandi-accent text-stone-900 text-sm font-black uppercase tracking-wider px-4 py-1.5 border-2 border-stone-900 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] mb-8">
-          Quality You Can Trust
-        </div>
-
-        <h2 className="text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight leading-none mb-6 max-w-4xl mx-auto">
-          "No Chemicals. <br className="sm:hidden" /> No Pesticides. <br /> Just Nature."
-        </h2>
-
-        {/* Horizontal Brutalist Core Competency Badges */}
-        <div className="mt-10 flex flex-wrap justify-center gap-3">
-          {trustPoints.map((point, index) => (
-            <div 
-              key={index} 
-              className="flex items-center gap-2 bg-white text-stone-900 border-2 border-stone-900 px-4 py-2 text-xs font-black uppercase tracking-wider shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"
-            >
-              <div className="text-mandi-green">
-                {point.icon}
-              </div>
-              <span>{point.label}</span>
-            </div>
-          ))}
-        </div>
-
+    <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden px-6 w-full border-b border-primary/5">
+      {/* Immersive Edge-to-Edge Background Frame with Enhanced Visibility */}
+      <div className="absolute inset-0 overflow-hidden w-full h-full">
+        <img 
+          alt="Nature Details" 
+          className="animate-ken-burns w-full h-full object-cover grayscale opacity-45" 
+          src="https://lh3.googleusercontent.com/aida/AP1WRLu-eggAHLwdZ2wZdKexVb_9AraviDnSWATQSLvpNTXoBabUDpwwblOzoNL48CNzTAb8kOwP43D0WXlk2QEWh5mz6BtrrqVekFwEWzOtKT2lOC2OFa9iFK0hssunmgGLBtBtvRBLDIlgfzwacHfKU41QbcUs7KSKEAPbUA3kiEkuxwMaVOev0Y6EnjNv9VPwLelC9MC3-z5uXXZCmg6Cky99Lht-D1tnjO433InD8MgfcfFsUlCATcLVxgCv"
+        />
       </div>
+      
+      <div className="relative z-10 w-full max-w-7xl mx-auto text-center px-4">
+        <span className="font-bold text-secondary tracking-[0.3em] uppercase mb-8 block text-sm drop-shadow-sm">
+          Our Sincere Promise
+        </span>
+        
+        <blockquote className="font-serif text-5xl md:text-7xl lg:text-8xl italic leading-tight text-primary drop-shadow-sm select-none">
+          "No Chemicals. <br className="sm:hidden" /> No Pesticides. <br /> Just Nature."
+        </blockquote>
+        
+        <div className="flex justify-center mt-8">
+          <div className="h-16 w-[1px] bg-primary/40" />
+        </div>
+      </div>
+      
+      {/* Lightened overlay tint to allow more background image details to pass through */}
+      <div className="absolute inset-0 bg-surface/30 backdrop-blur-[1px] -z-10" />
     </section>
   );
 }

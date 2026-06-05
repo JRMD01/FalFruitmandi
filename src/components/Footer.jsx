@@ -1,86 +1,63 @@
 /* src/components/Footer.jsx */
-import { MapPin, Phone, Mail, FileText } from 'lucide-react';
-// import logo from '../assets/FalFruitMandiLogo.png';
 
 export default function Footer() {
   return (
-    <footer id="contact" className="w-full bg-stone-900 text-stone-100 pt-16 pb-8 border-t-2 border-stone-900">
-      <div className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-8 pb-12 border-b border-stone-800">
+    <footer id="contact" className="w-full bg-surface py-20 px-6 border-t border-primary/5 max-w-[1440px] mx-auto">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-20">
         
-        {/* Left Column: Big Brand Massive Logo & Identity Layout */}
-        <div className="lg:col-span-6 space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-            {/* Massive High-Visibility Logo Wrapper */}
-            <div className="p-2 bg-white border-2 border-stone-900 shadow-[4px_4px_0px_0px_rgba(134,239,172,1)] inline-block shrink-0 w-24 h-24 sm:w-28 sm:h-28">
+        {/* Left Column: Corporate Identity with Massive Image Frame */}
+        <div className="space-y-6 max-w-xs">
+          <div className="flex items-center gap-3">
+            {/* Logo Box matching the background container sizing dynamics */}
+            <div className="p-2 bg-white border border-stone-900 w-16 h-16 shadow-[2px_2px_0px_0px_rgba(27,67,50,0.15)] shrink-0">
               <img 
-                src={"/FalFruitmandiLogo.png"} 
-                alt="FalFruitMandi Logo" 
+                alt="Logo" 
                 className="w-full h-full object-contain" 
+                src="/FalFruitmandiLogo.png" 
               />
             </div>
-            <div className="space-y-1">
-              <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-white leading-none">
-                FalFruitMandi
-              </h3>
-              <p className="text-xs font-black tracking-widest text-mandi-fresh uppercase">
-                Wholesale Pvt Ltd
-              </p>
-            </div>
+            <span className="font-serif text-2xl font-bold text-primary">FalFruitMandi</span>
           </div>
-          
-          <p className="text-xs font-bold text-stone-400 uppercase tracking-tight leading-relaxed max-w-md">
-            From Our Farms To Your Business. Premium chemical-free organic distribution pipelines serving household kitchens and retail storefront owners at identical wholesale rates.
+          <p className="text-primary/60 text-xs font-bold uppercase tracking-tight leading-relaxed">
+            Premium wholesale organic supply chain. Dedicated to bringing farm-fresh purity to every business pipeline.
           </p>
+          <div className="text-[10px] font-mono font-black text-primary opacity-40 tracking-widest">
+            GSTIN: 09AAGCF9788B1Z6
+          </div>
         </div>
         
-        {/* Right Column: Structured Logistics & Support */}
-        <div className="lg:col-span-6 space-y-4 lg:pt-4">
-          <h4 className="text-xs font-black uppercase tracking-widest text-mandi-fresh">
-            Corporate Logistics
-          </h4>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-bold uppercase tracking-tight text-stone-300">
-            {/* Address */}
-            <div className="flex items-start gap-2">
-              <MapPin size={16} className="text-mandi-fresh shrink-0 mt-0.5" />
-              <p className="leading-snug">
-                Noida Sector-16 C, <br />
-                Gautambuddha Nagar, <br />
-                U.P.-201309
-              </p>
-            </div>
-            
-            {/* Communication */}
-            <div className="space-y-2">
-              <div className="flex items-center gap-2">
-                <Phone size={16} className="text-mandi-fresh shrink-0" />
-                <a href="tel:+917048980435" className="hover:text-white transition-colors">
-                  +91 70489 80435
-                </a>
-              </div>
-              <div className="flex items-center gap-2 break-all">
-                <Mail size={16} className="text-mandi-fresh shrink-0" />
-                <a href="mailto:falfruitmandiwholesalepvtltd@gmail.com" className="hover:text-white transition-colors lowercase">
-                  falfruitmandiwholesalepvtltd@gmail.com
-                </a>
-              </div>
-            </div>
+        {/* Right Column: Site Navigation Directories */}
+        <div className="grid grid-cols-2 gap-16 lg:gap-24">
+          <div>
+            <h5 className="font-black text-xs uppercase tracking-widest text-secondary mb-6">Pages</h5>
+            <ul className="space-y-4 text-xs font-bold uppercase tracking-wider text-primary/60">
+              <li><a className="hover:text-primary transition-colors" href="#">Home</a></li>
+              <li><a className="hover:text-primary transition-colors" href="#features">Features</a></li>
+              <li><a className="hover:text-primary transition-colors" href="#offerings">Offerings</a></li>
+              <li><a className="hover:text-primary transition-colors" href="#contact">Contact</a></li>
+            </ul>
           </div>
-          
-          {/* Registry Identifier */}
-          <div className="pt-4 border-t border-stone-800 flex items-center gap-2">
-            <FileText size={14} className="text-stone-500 shrink-0" />
-            <p className="font-mono text-[10px] tracking-wider uppercase text-stone-400">
-              GSTIN: <span className="text-stone-200 font-black">09AAGCF9788B1Z6</span>
-            </p>
+          <div>
+            <h5 className="font-black text-xs uppercase tracking-widest text-secondary mb-6">Legal</h5>
+            <ul className="space-y-4 text-xs font-bold uppercase tracking-wider text-primary/60">
+              <li><a className="hover:text-primary transition-colors" href="#">Privacy</a></li>
+              <li><a className="hover:text-primary transition-colors" href="#">Terms</a></li>
+              <li><a className="hover:text-primary transition-colors" href="#">Shipping</a></li>
+            </ul>
           </div>
         </div>
 
       </div>
 
-      {/* Copyright Line */}
-      <div className="max-w-6xl mx-auto mt-8 text-center font-mono text-[10px] uppercase tracking-wider text-stone-600 font-bold">
-        © 2026 FalFruitMandi Wholesale Private Limited. All rights reserved.
+      {/* Bottom Identity Meta Layer */}
+      <div className="max-w-7xl mx-auto mt-20 pt-10 border-t border-primary/5 flex flex-col sm:flex-row justify-between items-center gap-6">
+        <p className="text-[10px] font-mono font-black text-primary/30 tracking-widest">
+          © 2026 FALFRUITMANDI WHOLESALE PVT LTD. ALL RIGHTS RESERVED.
+        </p>
+        <div className="flex gap-4">
+          <div className="w-8 h-8 rounded-full glass flex items-center justify-center text-primary/40"><span className="material-symbols-outlined text-lg">public</span></div>
+          <div className="w-8 h-8 rounded-full glass flex items-center justify-center text-primary/40"><span className="material-symbols-outlined text-lg">share</span></div>
+        </div>
       </div>
     </footer>
   );
