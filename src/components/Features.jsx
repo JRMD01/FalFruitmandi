@@ -1,4 +1,5 @@
 /* src/components/Features.jsx */
+import { useEffect, useRef, useState } from 'react';
 
 const features = [
   {
@@ -7,7 +8,6 @@ const features = [
     desc: "Certified chemical-free produce from natural farms.",
     backTitle: "Farm Pure",
     backDesc: "Our commitment starts at the root. We only source what we'd feed our families.",
-    // Unique color signatures for individual cards on mobile screens
     mobileBg: "bg-emerald-50/90",
     mobileBorder: "border-emerald-200",
     mobileIconColor: "text-emerald-700"
@@ -45,21 +45,52 @@ const features = [
 ];
 
 export default function Features() {
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="py-24 px-6 overflow-hidden max-w-[1440px] mx-auto" id="features">
+    <section 
+      className="py-24 px-6 overflow-hidden max-w-[1440px] mx-auto" 
+      id="features"
+      ref={sectionRef}
+    >
       <div className="max-w-7xl mx-auto">
-        <div className="mb-14 text-center md:text-left">
+        
+        {/* Title Viewport Transition */}
+        <div className={`mb-14 text-center md:text-left transition-all duration-1000 transform ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+        }`}>
           <h2 className="font-serif text-4xl md:text-6xl mb-3 text-[#1b4332] italic">Why Choose Us</h2>
           <div className="h-1 w-20 bg-[#95d5b2] rounded-full mx-auto md:mx-0" />
         </div>
         
-        {/* Adjusted grid layout to shrink height down on mobile devices (h-[200px]) for a tighter screen footprint */}
+        {/* Cascade Matrix Reveal */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-sm sm:max-w-none mx-auto">
           {features.map((f, i) => (
-            <div key={i} className="group [perspective:1000px] h-[200px] sm:h-[260px] w-full cursor-pointer">
+            <div 
+              key={i} 
+              className={`group [perspective:1000px] h-[200px] sm:h-[260px] w-full cursor-pointer transition-all duration-700 transform ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
+              }`}
+              style={{ transitionDelay: `${i * 150}ms` }}
+            >
               <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                 
-                {/* Front - Colorful, highly contextual backgrounds applied dynamically on mobile ports, defaulting cleanly back to normal styles on standard large desktop viewports */}
+                {/* Front Side */}
                 <div className={`absolute inset-0 max-sm:${f.mobileBg} max-sm:${f.mobileBorder} sm:bg-white/80 glass rounded-organic p-5 sm:p-6 flex flex-col justify-between shadow-sm border border-white/50 [backface-visibility:hidden] transition-all duration-300 group-hover:border-[#2d6a4f]/40 group-hover:shadow-md`}>
                   <span className={`material-symbols-outlined max-sm:${f.mobileIconColor} sm:text-[#1b4332] text-4xl transition-transform duration-300 group-hover:scale-110`}>
                     {f.icon}
@@ -70,7 +101,7 @@ export default function Features() {
                   </div>
                 </div>
 
-                {/* Back */}
+                {/* Back Side */}
                 <div className="absolute inset-0 bg-[#1b4332] text-white rounded-organic p-5 sm:p-6 flex flex-col justify-center text-center border border-white/10 [transform:rotateY(180deg)] [backface-visibility:hidden]">
                   <h3 className="font-serif text-lg sm:text-xl mb-1 sm:mb-2 text-[#95d5b2] italic border-b border-[#95d5b2]/20 pb-1 w-max mx-auto">{f.backTitle}</h3>
                   <p className="text-xs italic tracking-wide text-stone-200 leading-relaxed">{f.backDesc}</p>
@@ -80,6 +111,7 @@ export default function Features() {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
