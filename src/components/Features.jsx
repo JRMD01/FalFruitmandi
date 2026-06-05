@@ -1,64 +1,85 @@
 /* src/components/Features.jsx */
-import { Leaf, ShieldCheck, Banknote, Truck } from 'lucide-react';
 
 const features = [
   {
-    icon: <Leaf size={32} className="stroke-[2.5]" />,
+    icon: "eco",
     title: "100% Organic",
-    desc: "Strictly grown without chemical modifications, dangerous toxic sprays, or artificial pesticides."
+    desc: "Certified chemical-free produce from natural farms.",
+    backTitle: "Farm Pure",
+    backDesc: "Our commitment starts at the root. We only source what we'd feed our families.",
+    // Unique color signatures for individual cards on mobile screens
+    mobileBg: "bg-emerald-50/90",
+    mobileBorder: "border-emerald-200",
+    mobileIconColor: "text-emerald-700"
   },
   {
-    icon: <Banknote size={32} className="stroke-[2.5]" />,
-    title: "Equal Pricing",
-    desc: "Identical bulk wholesale market rates extended directly to standard homes and retail shop owners alike."
+    icon: "payments",
+    title: "Mandi Pricing",
+    desc: "Transparent wholesale rates updated daily.",
+    backTitle: "Value Driven",
+    backDesc: "Direct sourcing means no middleman markups, just fair prices for all.",
+    mobileBg: "bg-amber-50/90",
+    mobileBorder: "border-amber-200",
+    mobileIconColor: "text-amber-700"
   },
   {
-    icon: <ShieldCheck size={32} className="stroke-[2.5]" />,
-    title: "Absolute Trust",
-    desc: "Freshly harvested from natural farm operations and brought right to your operational destination."
+    icon: "verified_user",
+    title: "Trust Purity",
+    desc: "Decades of reliability in the supply chain.",
+    backTitle: "Reliability",
+    backDesc: "Building long-term partnerships through consistent quality delivery.",
+    mobileBg: "bg-sky-50/90",
+    mobileBorder: "border-sky-200",
+    mobileIconColor: "text-sky-700"
   },
   {
-    icon: <Truck size={32} className="stroke-[2.5]" />,
-    title: "Constant Supply",
-    desc: "Highly dependable daily distribution loops built for domestic kitchens or fast-moving retail racks."
+    icon: "local_shipping",
+    title: "Daily Supply",
+    desc: "Ensuring 24/7 availability of core items.",
+    backTitle: "Fastest Logistics",
+    backDesc: "Our supply chain never sleeps to keep your business running fresh.",
+    mobileBg: "bg-orange-50/90",
+    mobileBorder: "border-orange-200",
+    mobileIconColor: "text-orange-700"
   }
 ];
 
 export default function Features() {
   return (
-    <section id="about" className="w-full bg-white px-4 sm:px-8 py-14 border-b-2 border-stone-900">
-      <div className="mx-auto max-w-6xl">
-        
-        {/* Section Heading Tag */}
-        <div className="inline-block bg-stone-900 text-white text-xs font-black uppercase tracking-widest px-3 py-1 mb-8">
-          Why Choose Us
+    <section className="py-24 px-6 overflow-hidden max-w-[1440px] mx-auto" id="features">
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-14 text-center md:text-left">
+          <h2 className="font-serif text-4xl md:text-6xl mb-3 text-[#1b4332] italic">Why Choose Us</h2>
+          <div className="h-1 w-20 bg-[#95d5b2] rounded-full mx-auto md:mx-0" />
         </div>
         
-        {/* Brutalist Flat Grid Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {features.map((item, index) => (
-            <div 
-              key={index} 
-              className="bg-mandi-earth border-2 border-stone-900 p-6 shadow-[4px_4px_0px_0px_rgba(28,25,23,1)] flex flex-col justify-between"
-            >
-              <div>
-                {/* Icon Wrapper */}
-                <div className="inline-block p-3 bg-white border-2 border-stone-900 text-mandi-green mb-4 shadow-[2px_2px_0px_0px_rgba(28,25,23,1)]">
-                  {item.icon}
-                </div>
+        {/* Adjusted grid layout to shrink height down on mobile devices (h-[200px]) for a tighter screen footprint */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-sm sm:max-w-none mx-auto">
+          {features.map((f, i) => (
+            <div key={i} className="group [perspective:1000px] h-[200px] sm:h-[260px] w-full cursor-pointer">
+              <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                 
-                {/* Text Layout */}
-                <h3 className="text-xl font-black uppercase tracking-tight text-stone-900 mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-sm font-bold text-stone-700 leading-snug">
-                  {item.desc}
-                </p>
+                {/* Front - Colorful, highly contextual backgrounds applied dynamically on mobile ports, defaulting cleanly back to normal styles on standard large desktop viewports */}
+                <div className={`absolute inset-0 max-sm:${f.mobileBg} max-sm:${f.mobileBorder} sm:bg-white/80 glass rounded-organic p-5 sm:p-6 flex flex-col justify-between shadow-sm border border-white/50 [backface-visibility:hidden] transition-all duration-300 group-hover:border-[#2d6a4f]/40 group-hover:shadow-md`}>
+                  <span className={`material-symbols-outlined max-sm:${f.mobileIconColor} sm:text-[#1b4332] text-4xl transition-transform duration-300 group-hover:scale-110`}>
+                    {f.icon}
+                  </span>
+                  <div>
+                    <h3 className="font-serif text-lg sm:text-xl font-bold text-[#1b4332] mb-0.5 sm:mb-1">{f.title}</h3>
+                    <p className="text-xs opacity-75 font-medium leading-snug text-stone-800">{f.desc}</p>
+                  </div>
+                </div>
+
+                {/* Back */}
+                <div className="absolute inset-0 bg-[#1b4332] text-white rounded-organic p-5 sm:p-6 flex flex-col justify-center text-center border border-white/10 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                  <h3 className="font-serif text-lg sm:text-xl mb-1 sm:mb-2 text-[#95d5b2] italic border-b border-[#95d5b2]/20 pb-1 w-max mx-auto">{f.backTitle}</h3>
+                  <p className="text-xs italic tracking-wide text-stone-200 leading-relaxed">{f.backDesc}</p>
+                </div>
+
               </div>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

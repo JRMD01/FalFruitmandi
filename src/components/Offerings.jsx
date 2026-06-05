@@ -1,104 +1,104 @@
 /* src/components/Offerings.jsx */
-import { Apple, Salad, ShoppingCart, Home, Store } from 'lucide-react';
-
-const offerings = [
-  { 
-    name: "Fresh Fruits", 
-    items: "Premium seasonal & nutrient-rich exotic selections.", 
-    icon: <Apple size={24} className="stroke-[2.5]" /> 
-  },
-  { 
-    name: "Fresh Vegetables", 
-    items: "Daily garden-fresh staples, leafy greens, and organic roots.", 
-    icon: <Salad size={24} className="stroke-[2.5]" /> 
-  },
-  { 
-    name: "Online Ordering", 
-    items: "Streamlined digital checkout directly via your smartphone.", 
-    icon: <ShoppingCart size={24} className="stroke-[2.5]" /> 
-  },
-  { 
-    name: "Home Delivery", 
-    items: "Pure, chemical-free custom packs scaled perfectly for families.", 
-    icon: <Home size={24} className="stroke-[2.5]" /> 
-  },
-  { 
-    name: "Wholesale Supply", 
-    items: "Bulk commercial pipelines tailored for retail storefront owners.", 
-    icon: <Store size={24} className="stroke-[2.5]" /> 
-  }
-];
+import { Smartphone, Home } from 'lucide-react';
 
 export default function Offerings() {
   return (
-    <section id="offerings" className="w-full bg-mandi-earth px-4 sm:px-8 py-14 border-b-2 border-stone-900 overflow-hidden">
-      <div className="mx-auto max-w-6xl">
+    <section id="offerings" className="py-32 px-6 lg:px-16 bg-[#f3f4ec] border-y border-stone-200 max-w-[1440px] mx-auto">
+      <div className="max-w-7xl mx-auto">
         
-        {/* Header Layout */}
-        <div className="mb-10 max-w-md">
-          <div className="inline-block bg-stone-900 text-white text-xs font-black uppercase tracking-widest px-3 py-1 mb-4">
-            What We Offer
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-stone-900 leading-none">
-            Our Core Pipelines
-          </h2>
-          
-          {/* Enhanced Seamless Sea Wave Pattern */}
-          <div className="w-32 h-4 mt-3 text-mandi-green overflow-hidden relative">
-            <svg 
-              className="absolute top-0 left-0 h-full w-[200px] animate-[wave_1.6s_linear_infinite]" 
-              viewBox="0 0 100 16" 
-              preserveAspectRatio="none"
-              fill="none" 
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path 
-                d="M0 8 C 12.5 15, 12.5 1, 25 8 C 37.5 15, 37.5 1, 50 8 C 62.5 15, 62.5 1, 75 8 C 87.5 15, 87.5 1, 100 8" 
-                stroke="currentColor" 
-                strokeWidth="4" 
-                strokeLinecap="round"
-              />
-              <path 
-                d="M100 8 C 112.5 15, 112.5 1, 125 8 C 137.5 15, 137.5 1, 150 8 C 162.5 15, 162.5 1, 175 8 C 187.5 15, 187.5 1, 200 8" 
-                stroke="currentColor" 
-                strokeWidth="4" 
-                strokeLinecap="round"
-              />
-            </svg>
-          </div>
+        <div className="mb-20 text-center">
+          <span className="font-bold text-emerald-800 text-sm tracking-widest uppercase mb-4 block">What we do</span>
+          <h2 className="font-serif text-5xl md:text-7xl text-[#1b4332] italic">Our Core Pipelines</h2>
         </div>
 
-        {/* Dense Brutalist List/Grid Architecture */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {offerings.map((cat, i) => (
-            <div 
-              key={i} 
-              className="bg-white border-2 border-stone-900 p-6 shadow-[4px_4px_0px_0px_rgba(28,25,23,1)] flex items-start gap-4 hover:-translate-y-0.5 active:translate-y-0 transition-all"
-            >
-              <div className="p-3 bg-mandi-fresh/30 border-2 border-stone-900 text-stone-900 shrink-0">
-                {cat.icon}
-              </div>
-              <div className="space-y-1">
-                <h4 className="text-lg font-black uppercase tracking-tight text-stone-900">
-                  {cat.name}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+          {/* Main Visual Commercial Block */}
+          <div className="lg:col-span-8 group relative rounded-[24px] overflow-hidden shadow-2xl h-[500px] border border-stone-200">
+            <img 
+              alt="Wholesale Fruit Crate" 
+              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
+              src="https://lh3.googleusercontent.com/aida/AP1WRLszvENctuy8q11fTKAgvjnZDtZAUuhYjFSzTe7aqL5thu4aZ-eDtsqFusu_yDpzSPkne_l_WmaWw99t0gQm4KxFfW8qUqAuZWWTt3_trBjRBTQFzwzKl1nCEmtxkH9Ak-uowTkdGC6sFj2ogzxeSP0VqaJO08sE9c5kNsyINOT-8uO-vpRV3SWAoMTk6CmMq0kn3C5l9J-OVlncZG1-0rKApxDo01mvSNhIsqQEFBMCGxjrHus3ABYq3Yey"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1b4332] via-[#1b4332]/40 to-transparent flex flex-col justify-end p-8 sm:p-12">
+              <h3 className="font-serif text-5xl md:text-6xl text-white italic mb-4">Wholesale Supply</h3>
+              <p className="text-white/80 max-w-md text-sm font-medium leading-relaxed uppercase tracking-tight">
+                B2B infrastructure customized explicitly for food systems, grocery chains, and local markets.
+              </p>
+            </div>
+          </div>
+
+          {/* Secondary Stacked Category Blocks */}
+          <div className="lg:col-span-4 flex flex-col gap-8">
+            {/* Box 1: Fresh Fruits */}
+            <div className="flex-1 bg-white glass rounded-[24px] p-8 flex flex-col justify-between shadow-sm border border-stone-200 group transition-all duration-500">
+              <div>
+                <h4 className="font-serif text-3xl font-bold text-[#1b4332] transition-colors duration-300">
+                  Fresh Fruits
                 </h4>
-                <p className="text-xs font-bold text-stone-600 leading-snug">
-                  {cat.items}
+                <p className="text-stone-600 text-xs font-bold uppercase group-hover:text-[#95d5b2] tracking-tight mt-1 transition-colors duration-300">
+                  Seasonally logged clean crop selections.
                 </p>
               </div>
+              <div className="mt-4 overflow-hidden rounded-xl h-20 border border-stone-100 shadow-inner">
+                <img 
+                  alt="Fruit Detail" 
+                  className="w-full h-full object-cover" 
+                  src="https://lh3.googleusercontent.com/aida/AP1WRLt3ZJp_uh9Z4t4cJxsnJgDUtUI81eT9nvu6bjD744o5oGJItCgW4CGnUOk9l1j9Mox9HoxN3FgT4cH5HB51TGVEknWafBO8BLvA7UYP_vasR4ds52ozvDUt6JWIVqwaX68sZYUCboenJ6Ade6eb6f_R5AfACuDyN3YZIlnH69jomeIX4v38v4ySiwICP0W-kE5FwaPY0sY1KaAjxp5tvIPSn54jLjyb5OhHS2Yu6pmcvyk2UghJLJzYxsYJ"
+                />
+              </div>
             </div>
-          ))}
+            
+            {/* Box 2: Fresh Veggies */}
+            <div className="flex-1 bg-white glass rounded-[24px] p-8 flex flex-col justify-between shadow-sm border border-stone-200 group hover:bg-[#2d6a4f] transition-all duration-500">
+              <div>
+                <h4 className="font-serif text-3xl font-bold text-[#1b4332] transition-colors duration-300">
+                  Fresh Veggies
+                </h4>
+                <p className="text-stone-600 text-xs font-bold uppercase tracking-tight group-hover:text-[#95d5b2] mt-1 transition-colors duration-300">
+                  Daily picked raw varieties distributed prompt.
+                </p>
+              </div>
+              <div className="mt-4 overflow-hidden rounded-xl h-20 border border-stone-100 shadow-inner">
+                <img 
+                  alt="Veggie Detail" 
+                  className="w-full h-full object-cover" 
+                  src="https://lh3.googleusercontent.com/aida/AP1WRLsojnc8uHAkxB5_KUVZ9avlq42AicRct6UFMAyM4FDIKlm7gTijZzAvsUHCOlvtL2slqKis5WkjLKnwNSlEf5vrNtYi-1T4E6pox2N_mti9MmtZSI7d7C3cq202TMGSiejElMKnThdvoV5nFE2BSpNQZYNDH4LZeCpBnxIQNvE9-GIaVv6eYMSARlfAqVoEn-DvqeQ85hevkiuatRpmwd0uJ-_JwxYi0DoHz_91fi0CLfiiNJ29AFG4Y60"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Horizon Grid Blocks */}
+          <div className="lg:col-span-6 bg-white glass rounded-[24px] p-8 flex items-center gap-6 shadow-sm border border-stone-200 group hover:bg-[#1b4332] transition-all duration-500">
+            <div className="w-16 h-16 bg-[#95d5b2]/20 rounded-2xl flex items-center justify-center text-[#1b4332] shrink-0 group-hover:bg-white group-hover:text-[#1b4332] transition-all duration-300">
+              <Smartphone size={28} className="stroke-[2]" />
+            </div>
+            <div>
+              <h4 className="font-serif text-2xl font-bold text-[#1b4332]  transition-colors duration-300">
+                Digital Mandi
+              </h4>
+              <p className="text-sm text-stone-600 font-medium mt-0.5 group-hover:text-[#95d5b2] transition-colors duration-300">
+                Streamlined smartphone dashboard for active operations management.
+              </p>
+            </div>
+          </div>
+
+          <div className="lg:col-span-6 bg-white glass rounded-[24px] p-8 flex items-center gap-6 shadow-sm border border-stone-200 group hover:bg-[#2d6a4f] transition-all duration-500">
+            <div className="w-16 h-16 bg-[#2d6a4f]/20 rounded-2xl flex items-center justify-center text-[#2d6a4f] shrink-0 group-hover:bg-white group-hover:text-[#2d6a4f] transition-all duration-300">
+              <Home size={28} className="stroke-[2]" />
+            </div>
+            <div>
+              <h4 className="font-serif text-2xl font-bold text-[#1b4332]  transition-colors duration-300">
+                Home Delivery
+              </h4>
+              <p className="text-sm text-stone-600 font-medium mt-0.5 group-hover:text-[#95d5b2] transition-colors duration-300">
+                Optimized last-mile cold networks providing pure logistics directly to homes.
+              </p>
+            </div>
+          </div>
+
         </div>
-
       </div>
-
-      {/* Math-Perfect Inline Keyframe Animation to Avoid Layout Breaks */}
-      <style>{`
-        @keyframes wave {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-100px); }
-        }
-      `}</style>
     </section>
   );
 }

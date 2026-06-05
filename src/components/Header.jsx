@@ -1,103 +1,85 @@
 /* src/components/Header.jsx */
-import { useState } from 'react';
-import { Menu, X, MessageCircle } from 'lucide-react';
-// import logo from '../assets/FalFruitMandiLogo.png';
+import { useState, useEffect } from 'react';
+import { Menu, X , LeafIcon} from 'lucide-react';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-mandi-earth border-b-2 border-stone-900 px-4 sm:px-8">
-      {/* Max-width wrapper keeping constraints tight but breathable on large screens */}
-      <div className="mx-auto max-w-6xl h-24 flex items-center justify-between">
-        
-        {/* Brand/Logo Area - Overhauled for High Visibility Purity */}
-        <a href="#" className="flex items-center gap-3 group focus:outline-none">
-          <div className="p-1 bg-white border-2 border-stone-900 shadow-[3px_3px_0px_0px_rgba(28,25,23,1)] group-hover:translate-x-[1px] group-hover:translate-y-[1px] group-hover:shadow-[2px_2px_0px_0px_rgba(28,25,23,1)] transition-all shrink-0">
-            <img 
-              src={"/FalFruitmandiLogo.png"} 
-              alt="FalFruitMandi Logo" 
-              className="h-14 w-14 sm:h-16 sm:w-16 object-contain" 
-            />
+    <>
+      <nav 
+        id="main-nav" 
+        className={`fixed top-0 w-full z-50 transition-all duration-300 px-6 lg:px-16 ${
+          isScrolled ? 'py-2' : 'py-4'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto glass rounded-full px-8 py-3 flex justify-between items-center shadow-lg border border-white/50">
+          <div className="flex items-center gap-3">
+            <img alt="FalFruitMandi Logo" className="h-10 w-auto" src="/FalFruitmandiLogo.png" />
+            <span className="font-serif text-2xl font-bold tracking-tight text-primary">FalFruitMandi</span>
           </div>
-          <div className="flex flex-col">
-            <span className="text-xl sm:text-2xl font-black tracking-tight text-stone-900 uppercase leading-none">
-              FalFruitMandi
-            </span>
-            <span className="text-[10px] sm:text-xs font-black tracking-widest text-mandi-green uppercase mt-1">
-              Wholesale Pvt Ltd
-            </span>
+          
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex gap-10 items-center">
+            <a className="font-semibold text-sm hover:text-secondary transition-colors" href="#features">Features</a>
+            <a className="font-semibold text-sm hover:text-secondary transition-colors" href="#offerings">Offerings</a>
+            <a className="font-semibold text-sm hover:text-secondary transition-colors" href="#contact">Contact</a>
+            <a 
+              href="https://wa.me/917048980435?text=Hello%20FalFruitMandi,%20I%20want%20to%20place%20an%20order."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg bg-primary text-white px-8 py-2.5 rounded-full text-sm font-bold shadow-md"
+            >
+              Order Now
+            </a>
           </div>
-        </a>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6">
-          <a href="#about" className="text-sm font-black uppercase tracking-wider text-stone-700 hover:text-mandi-green transition-colors py-2">
-            About
-          </a>
-          <a href="#offerings" className="text-sm font-black uppercase tracking-wider text-stone-700 hover:text-mandi-green transition-colors py-2">
-            Offerings
-          </a>
-          <a href="#contact" className="text-sm font-black uppercase tracking-wider text-stone-700 hover:text-mandi-green transition-colors py-2">
-            Contact
-          </a>
-          <a 
-            href="https://wa.me/917048980435?text=Hello%20FalFruitMandi,%20I%20want%20to%20place%20an%20order."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-mandi-green text-white text-xs font-black uppercase tracking-widest px-5 py-3 border-2 border-stone-900 shadow-[3px_3px_0px_0px_rgba(28,25,23,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0px_0px_rgba(28,25,23,1)] transition-all"
-          >
-            <MessageCircle size={16} fill="currentColor" />
-            Order Now
-          </a>
-        </nav>
-
-        {/* Mobile Menu Button */}
-        <button 
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 text-stone-900 border-2 border-stone-900 bg-white shadow-[2px_2px_0px_0px_rgba(28,25,23,1)] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_0px_rgba(28,25,23,1)] transition-all focus:outline-none"
-          aria-label="Toggle Menu"
-        >
-          {isOpen ? <X size={24} className="stroke-[3]" /> : <Menu size={24} className="stroke-[3]" />}
-        </button>
-      </div>
-
-      {/* Mobile Drawer Navigation */}
-      {isOpen && (
-        <div className="md:hidden absolute top-[94px] left-0 w-full bg-mandi-earth border-b-2 border-stone-900 px-4 py-6 flex flex-col gap-4 shadow-[0_4px_0_0_rgba(28,25,23,0.05)] animate-in fade-in slide-in-from-top-2 duration-150">
-          <a 
-            href="#about" 
-            onClick={() => setIsOpen(false)}
-            className="text-base font-black uppercase tracking-wider text-stone-900 border-b border-stone-200 pb-2"
-          >
-            About
-          </a>
-          <a 
-            href="#offerings" 
-            onClick={() => setIsOpen(false)}
-            className="text-base font-black uppercase tracking-wider text-stone-900 border-b border-stone-200 pb-2"
-          >
-            Offerings
-          </a>
-          <a 
-            href="#contact" 
-            onClick={() => setIsOpen(false)}
-            className="text-base font-black uppercase tracking-wider text-stone-900 border-b border-stone-200 pb-2"
-          >
-            Contact
-          </a>
-          <a 
-            href="https://wa.me/917048980435?text=Hello%20FalFruitMandi,%20I%20want%20to%20place%20an%20order."
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setIsOpen(false)}
-            className="w-full flex items-center justify-center gap-2 bg-mandi-accent text-stone-900 text-sm font-black uppercase tracking-widest py-4 border-2 border-stone-900 shadow-[4px_4px_0px_0px_rgba(28,25,23,1)]"
-          >
-            <MessageCircle size={18} fill="currentColor" />
-            Order on WhatsApp
-          </a>
+          {/* Mobile Menu Trigger */}
+          <button onClick={() => setIsOpen(true)} className="md:hidden p-2 text-primary focus:outline-none">
+            <Menu size={28} />
+          </button>
         </div>
+      </nav>
+
+      {/* Mobile Drawer Sidebar */}
+      {isOpen && (
+        <>
+          <div 
+            onClick={() => setIsOpen(false)} 
+            className="fixed inset-0 bg-primary/20 backdrop-blur-md z-[60] transition-opacity duration-300" 
+          />
+          <div className="fixed right-0 top-0 h-full w-4/5 max-w-sm bg-surface z-[70] p-10 flex flex-col gap-8 shadow-2xl border-l border-primary/10 transition-transform duration-500">
+            <div className="flex justify-between items-center mb-8">
+              <img alt="Logo" className="h-12 w-auto" src="/FalFruitmandiLogo.png" />
+              <button onClick={() => setIsOpen(false)} className="text-primary focus:outline-none">
+                <X size={28} />
+              </button>
+            </div>
+            <div className="flex flex-col gap-6 font-serif text-3xl italic">
+              <a href="#features" onClick={() => setIsOpen(false)}>Features</a>
+              <a href="#offerings" onClick={() => setIsOpen(false)}>Offerings</a>
+              <a href="#contact" onClick={() => setIsOpen(false)}>Contact</a>
+            </div>
+            <a 
+              href="https://wa.me/917048980435"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-auto block text-center bg-primary text-white p-5 rounded-2xl font-bold text-xl shadow-xl transition-transform active:scale-95"
+            >
+              Order Wholesale
+            </a>
+          </div>
+        </>
       )}
-    </header>
+    </>
   );
 }
