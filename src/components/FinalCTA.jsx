@@ -8,8 +8,8 @@ export default function FinalCTA() {
       <div className="absolute inset-0 overflow-hidden w-full h-full">
         <img 
           alt="Immersive Graphic Frame" 
-          className="animate-ken-burns w-full h-full object-cover opacity-20 mix-blend-overlay" 
-          src="https://lh3.googleusercontent.com/aida/AP1WRLt3ZJp_uh9Z4t4cJxsnJgDUtUI81eT9nvu6bjD744o5oGJItCgW4CGnUOk9l1j9Mox9HoxN3FgT4cH5HB51TGVEknWafBO8BLvA7UYP_vasR4ds52ozvDUt6JWIVqwaX68sZYUCboenJ6Ade6eb6f_R5AfACuDyN3YZIlnH69jomeIX4v38v4ySiwICP0W-kE5FwaPY0sY1KaAjxp5tvIPSn54jLjyb5OhHS2Yu6pmcvyk2UghJLJzYxsYJ"
+          className="animate-ken-burns w-full h-full object-cover opacity-40 mix-blend-overlay" 
+          src="/basket.jpg"
         />
       </div>
 

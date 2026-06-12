@@ -45,7 +45,7 @@ export default function Offerings() {
             <img 
               alt="Wholesale Fruit Crate" 
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
-              src="https://lh3.googleusercontent.com/aida/AP1WRLszvENctuy8q11fTKAgvjnZDtZAUuhYjFSzTe7aqL5thu4aZ-eDtsqFusu_yDpzSPkne_l_WmaWw99t0gQm4KxFfW8qUqAuZWWTt3_trBjRBTQFzwzKl1nCEmtxkH9Ak-uowTkdGC6sFj2ogzxeSP0VqaJO08sE9c5kNsyINOT-8uO-vpRV3SWAoMTk6CmMq0kn3C5l9J-OVlncZG1-0rKApxDo01mvSNhIsqQEFBMCGxjrHus3ABYq3Yey"
+              src="/Veggies_Home.png"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1b4332] via-[#1b4332]/40 to-transparent flex flex-col justify-end p-8 sm:p-12">
               <h3 className="font-serif text-5xl md:text-6xl text-white italic mb-4">Wholesale Supply</h3>
@@ -74,7 +74,7 @@ export default function Offerings() {
                 <img 
                   alt="Fruit Detail" 
                   className="w-full h-full object-cover" 
-                  src="https://lh3.googleusercontent.com/aida/AP1WRLt3ZJp_uh9Z4t4cJxsnJgDUtUI81eT9nvu6bjD744o5oGJItCgW4CGnUOk9l1j9Mox9HoxN3FgT4cH5HB51TGVEknWafBO8BLvA7UYP_vasR4ds52ozvDUt6JWIVqwaX68sZYUCboenJ6Ade6eb6f_R5AfACuDyN3YZIlnH69jomeIX4v38v4ySiwICP0W-kE5FwaPY0sY1KaAjxp5tvIPSn54jLjyb5OhHS2Yu6pmcvyk2UghJLJzYxsYJ"
+                  src="/fruit_basket_2.png"
                 />
               </div>
             </div>
@@ -95,7 +95,7 @@ export default function Offerings() {
                 <img 
                   alt="Veggie Detail" 
                   className="w-full h-full object-cover" 
-                  src="https://lh3.googleusercontent.com/aida/AP1WRLsojnc8uHAkxB5_KUVZ9avlq42AicRct6UFMAyM4FDIKlm7gTijZzAvsUHCOlvtL2slqKis5WkjLKnwNSlEf5vrNtYi-1T4E6pox2N_mti9MmtZSI7d7C3cq202TMGSiejElMKnThdvoV5nFE2BSpNQZYNDH4LZeCpBnxIQNvE9-GIaVv6eYMSARlfAqVoEn-DvqeQ85hevkiuatRpmwd0uJ-_JwxYi0DoHz_91fi0CLfiiNJ29AFG4Y60"
+                  src="/organic_veggies.png"
                 />
               </div>
             </div>

@@ -1,5 +1,4 @@
 /* src/components/TrustQuote.jsx */
-import {LeafIcon} from 'lucide-react'
 export default function TrustQuote() {
   return (
     <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden px-6 w-full border-b border-primary/5">
@@ -8,7 +7,7 @@ export default function TrustQuote() {
         <img 
           alt="Nature Details" 
           className="animate-ken-burns w-full h-full object-cover grayscale opacity-45" 
-          src="https://lh3.googleusercontent.com/aida/AP1WRLu-eggAHLwdZ2wZdKexVb_9AraviDnSWATQSLvpNTXoBabUDpwwblOzoNL48CNzTAb8kOwP43D0WXlk2QEWh5mz6BtrrqVekFwEWzOtKT2lOC2OFa9iFK0hssunmgGLBtBtvRBLDIlgfzwacHfKU41QbcUs7KSKEAPbUA3kiEkuxwMaVOev0Y6EnjNv9VPwLelC9MC3-z5uXXZCmg6Cky99Lht-D1tnjO433InD8MgfcfFsUlCATcLVxgCv"
+          src="/dewy_leaves.png"
         />
       </div>
       
