@@ -2,9 +2,9 @@
 import { useState, useEffect } from 'react';
 import {LeafIcon} from 'lucide-react'
 const slideshowImages = [
-  "https://lh3.googleusercontent.com/aida/AP1WRLsojnc8uHAkxB5_KUVZ9avlq42AicRct6UFMAyM4FDIKlm7gTijZzAvsUHCOlvtL2slqKis5WkjLKnwNSlEf5vrNtYi-1T4E6pox2N_mti9MmtZSI7d7C3cq202TMGSiejElMKnThdvoV5nFE2BSpNQZYNDH4LZeCpBnxIQNvE9-GIaVv6eYMSARlfAqVoEn-DvqeQ85hevkiuatRpmwd0uJ-_JwxYi0DoHz_91fi0CLfiiNJ29AFG4Y60",
-  "https://lh3.googleusercontent.com/aida/AP1WRLszvENctuy8q11fTKAgvjnZDtZAUuhYjFSzTe7aqL5thu4aZ-eDtsqFusu_yDpzSPkne_l_WmaWw99t0gQm4KxFfW8qUqAuZWWTt3_trBjRBTQFzwzKl1nCEmtxkH9Ak-uowTkdGC6sFj2ogzxeSP0VqaJO08sE9c5kNsyINOT-8uO-vpRV3SWAoMTk6CmMq0kn3C5l9J-OVlncZG1-0rKApxDo01mvSNhIsqQEFBMCGxjrHus3ABYq3Yey",
-  "https://lh3.googleusercontent.com/aida/AP1WRLt3ZJp_uh9Z4t4cJxsnJgDUtUI81eT9nvu6bjD744o5oGJItCgW4CGnUOk9l1j9Mox9HoxN3FgT4cH5HB51TGVEknWafBO8BLvA7UYP_vasR4ds52ozvDUt6JWIVqwaX68sZYUCboenJ6Ade6eb6f_R5AfACuDyN3YZIlnH69jomeIX4v38v4ySiwICP0W-kE5FwaPY0sY1KaAjxp5tvIPSn54jLjyb5OhHS2Yu6pmcvyk2UghJLJzYxsYJ"
+  "/fruit_veggies.png",
+  "/organic_veggies.png",
+  "/Veggies_Home.png"
 ];
 
 export default function Hero() {
@@ -69,7 +69,7 @@ export default function Hero() {
             ))}
           </div>
           <div className="absolute -bottom-10 left-4 w-40 h-40 bg-white/40 backdrop-blur-xl rounded-full border border-white/50 shadow-2xl flex items-center justify-center p-6 hidden md:flex">
-            <img alt="Leaf Detail" className="w-full h-full object-contain opacity-80 animate-leaf-float" src="/FalFruitmandiLogo.png" />
+            <img alt="Leaf Detail" className="w-full h-full object-contain opacity-80 animate-leaf-float" src="/leaf.png" />
           </div>
         </div>
 
